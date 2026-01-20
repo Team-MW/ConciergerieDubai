@@ -1,0 +1,258 @@
+import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
+import { Link } from 'react-router-dom';
+import { Car } from 'lucide-react';
+import desertBg from '../assets/bacgroundsection.jpg';
+import ktmImg from '../assets/KTM.jpg';
+import quadImg from '../assets/QUAD.jpg';
+import buggyImg from '../assets/buggy.jpg';
+
+const DesertTour = () => {
+    const activities = [
+        {
+            title: "Yamaha Raptor 700cc",
+            desc: "Quad puissant pour sensations fortes",
+            category: "Quad & Moto",
+            image: quadImg,
+            options: [
+                { duration: "1 heure", oldPrice: "650 AED", price: "500 AED", discount: "-23%" }
+            ],
+            features: ["700cc", "Équipement inclus", "Guide disponible"]
+        },
+        {
+            title: "Polaris 570cc",
+            desc: "Quad polyvalent et maniable",
+            category: "Quad & Moto",
+            image: quadImg,
+            options: [
+                { duration: "1 heure", oldPrice: "600 AED", price: "450 AED", discount: "-25%" }
+            ],
+            features: ["570cc", "Parfait débutants", "Zone sécurisée"]
+        },
+        {
+            title: "KTM 450cc",
+            desc: "Moto cross haute performance",
+            category: "Quad & Moto",
+            image: ktmImg,
+            options: [
+                { duration: "1 heure", oldPrice: "750 AED", price: "600 AED", discount: "-20%" }
+            ],
+            features: ["450cc", "Expérience requise", "Sensations extrêmes"]
+        },
+        {
+            title: "Polaris 1000cc",
+            desc: "Buggy 2 places confortable",
+            category: "Buggy",
+            image: buggyImg,
+            options: [
+                { duration: "1 heure", oldPrice: "1100 AED", price: "850 AED", discount: "-23%" }
+            ],
+            features: ["2 places", "1000cc", "Tout terrain"]
+        },
+        {
+            title: "Can-Am X3 1000cc (2 places)",
+            desc: "Buggy sportif haute performance",
+            category: "Buggy",
+            image: buggyImg,
+            options: [
+                { duration: "1 heure", oldPrice: "1600 AED", price: "1300 AED", discount: "-19%" }
+            ],
+            features: ["2 places", "1000cc", "Performance maximale"]
+        },
+        {
+            title: "Can-Am X3 1000cc (4 places)",
+            desc: "Buggy familial spacieux",
+            category: "Buggy",
+            image: buggyImg,
+            options: [
+                { duration: "1 heure", oldPrice: "1750 AED", price: "1400 AED", discount: "-20%" }
+            ],
+            features: ["4 places", "1000cc", "Idéal famille"]
+        },
+        {
+            title: "Can-Am Maverick R 2024",
+            desc: "Le dernier né de Can-Am",
+            category: "Buggy",
+            image: buggyImg,
+            options: [
+                { duration: "1 heure", oldPrice: "3000 AED", price: "2500 AED", discount: "-17%" }
+            ],
+            features: ["2 places", "Modèle 2024", "Top performance"],
+            highlight: true
+        },
+        {
+            title: "Dunes Bashing",
+            desc: "Balade dans les dunes en 4x4",
+            category: "Expériences",
+            options: [
+                { duration: "20 min", oldPrice: "250 AED", price: "200 AED", discount: "-20%" }
+            ],
+            features: ["6 pers. max", "4x4 professionnel", "Sensations garanties"]
+        },
+        {
+            title: "Balade en Chameau",
+            desc: "Expérience traditionnelle du désert",
+            category: "Expériences",
+            options: [
+                { duration: "20 min", oldPrice: "200 AED", price: "150 AED", discount: "-25%" }
+            ],
+            features: ["Authentique", "Photos incluses", "Guide local"]
+        },
+        {
+            title: "Dîner au Camp",
+            desc: "Repas traditionnel sous les étoiles",
+            category: "Expériences",
+            options: [
+                { duration: "Par personne", oldPrice: "350 AED", price: "250 AED", discount: "-29%" }
+            ],
+            features: ["Buffet complet", "Spectacle", "Ambiance bédouine"]
+        },
+        {
+            title: "Transfert Hôtel-Désert",
+            desc: "Aller-retour confortable",
+            category: "Expériences",
+            options: [
+                { duration: "Par voiture", oldPrice: "500 AED", price: "400 AED", discount: "-20%" }
+            ],
+            features: ["6 pers. max", "Aller-retour", "Véhicule climatisé"]
+        }
+    ];
+
+    return (
+        <>
+            <SEO title="Desert Tour" description="Vivez l'aventure du désert à Dubaï : Quads, Buggies, Dunes Bashing et plus." />
+
+            {/* Hero Section */}
+            <section className="relative h-[60vh] overflow-hidden">
+                <div
+                    className="absolute inset-0 z-0"
+                    style={{
+                        backgroundImage: `url(${desertBg})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                    }}
+                >
+                    <div className="absolute inset-0 bg-black/40" />
+                </div>
+                <div className="relative z-10 h-full flex flex-col items-center justify-center text-white px-4">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="text-center"
+                    >
+                        <h1 className="text-5xl md:text-6xl font-bold mb-4">Desert Tour</h1>
+                        <p className="text-xl md:text-2xl font-light max-w-2xl mx-auto">
+                            L'aventure commence dans les dunes dorées
+                        </p>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* Activities Grid */}
+            <section className="py-20 bg-gray-50">
+                <div className="container mx-auto px-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {activities.map((activity, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: i * 0.05 }}
+                                className={`rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group relative ${activity.highlight
+                                    ? 'bg-gradient-to-br from-amber-400 to-orange-500 text-white'
+                                    : 'bg-white'
+                                    }`}
+                            >
+                                {activity.highlight && (
+                                    <div className="absolute top-4 right-4 z-10 bg-sale text-white font-black text-xs px-3 py-1 rounded-full shadow-lg animate-pulse">
+                                        NOUVEAU 2024
+                                    </div>
+                                )}
+
+                                <div className="h-48 relative overflow-hidden">
+                                    {activity.image ? (
+                                        <img
+                                            src={activity.image}
+                                            alt={activity.title}
+                                            className="w-full h-full object-cover"
+                                        />
+                                    ) : (
+                                        <div className={`h-full ${activity.highlight
+                                                ? 'bg-gradient-to-br from-orange-500 to-amber-600'
+                                                : 'bg-gradient-to-br from-orange-400 to-amber-500'
+                                            } flex items-center justify-center`}>
+                                            <Car className="w-20 h-20 text-white/30" />
+                                        </div>
+                                    )}
+                                    <div className="absolute top-4 left-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+                                        <span className="text-xs font-semibold text-white">
+                                            {activity.category}
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div className="p-6">
+                                    <h3 className={`text-2xl font-bold mb-2 ${activity.highlight ? 'text-white' : 'text-primary'}`}>
+                                        {activity.title}
+                                    </h3>
+                                    <p className={`mb-4 ${activity.highlight ? 'text-white/90' : 'text-gray-500'}`}>
+                                        {activity.desc}
+                                    </p>
+
+                                    <ul className="space-y-2 mb-6">
+                                        {activity.features.map((feature, idx) => (
+                                            <li key={idx} className={`flex items-center text-sm ${activity.highlight ? 'text-white/80' : 'text-gray-600'}`}>
+                                                <div className={`w-1.5 h-1.5 rounded-full mr-2 ${activity.highlight ? 'bg-white' : 'bg-accent'}`} />
+                                                {feature}
+                                            </li>
+                                        ))}
+                                    </ul>
+
+                                    <div className="border-t pt-4 space-y-3" style={{ borderColor: activity.highlight ? 'rgba(255,255,255,0.3)' : undefined }}>
+                                        {activity.options.map((option, idx) => (
+                                            <div key={idx} className={`p-3 rounded-lg ${activity.highlight ? 'bg-white/20' : 'bg-gray-50'
+                                                }`}>
+                                                <div className="flex items-center justify-between mb-2">
+                                                    <span className={`text-sm font-semibold ${activity.highlight ? 'text-white' : 'text-gray-700'}`}>
+                                                        {option.duration}
+                                                    </span>
+                                                    {option.discount && (
+                                                        <span className={`text-xs font-bold px-2 py-1 rounded-full ${activity.highlight ? 'bg-white text-orange-600' : 'bg-sale text-white'
+                                                            }`}>
+                                                            {option.discount}
+                                                        </span>
+                                                    )}
+                                                </div>
+                                                <div className="flex items-center gap-2">
+                                                    {option.oldPrice && (
+                                                        <span className={`text-sm line-through ${activity.highlight ? 'text-white/60' : 'text-gray-400'}`}>
+                                                            {option.oldPrice}
+                                                        </span>
+                                                    )}
+                                                    <span className={`text-xl font-black ${activity.highlight ? 'text-white' : 'text-sale'}`}>
+                                                        {option.price}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        ))}
+                                        <Link
+                                            to="/contact"
+                                            className={`w-full block text-center font-bold py-3 rounded-lg transition-colors mt-4 ${activity.highlight
+                                                ? 'bg-white text-orange-600 hover:bg-gray-100'
+                                                : 'bg-primary text-white hover:bg-sale'
+                                                }`}
+                                        >
+                                            Réserver maintenant
+                                        </Link>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        </>
+    );
+};
+
+export default DesertTour;
