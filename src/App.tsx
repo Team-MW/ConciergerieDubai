@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { HelmetProvider } from 'react-helmet-async';
 import { AnimatePresence, motion } from 'framer-motion';
 import Layout from './components/Layout';
+import ScrollToTop from './components/ScrollToTop';
 
 // Lazy loading pages
 const Home = lazy(() => import('./pages/Home'));
@@ -50,6 +51,7 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
+        <ScrollToTop />
         <Layout>
           <Suspense fallback={<div className="h-screen w-full flex items-center justify-center bg-white text-primary">Chargement...</div>}>
             <AnimatedRoutes />

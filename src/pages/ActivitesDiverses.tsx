@@ -23,118 +23,142 @@ const diversesFaqs = [
     }
 ];
 
+interface ActivityOption {
+    duration: string;
+    price: string;
+    oldPrice?: string;
+    discount?: string;
+}
+
+interface Activity {
+    title: string;
+    desc: string;
+    category: string;
+    image: string;
+    options: ActivityOption[];
+    features: string[];
+    highlight?: boolean;
+}
+
 const ActivitesDiverses = () => {
-    const skiDubai = [
+    const activities: Activity[] = [
+        // Ski Dubai
         {
             title: "Snow Classique",
-            price: "220 AED",
-            features: [
-                "Accès unique au Snow Park",
-                "Accès illimité aux manèges",
-                "Gants polaire",
-                "Chocolat chaud"
-            ]
+            desc: "Accès au Snow Park et manèges",
+            category: "Ski Dubai",
+            image: activiteBg,
+            options: [
+                { duration: "Journée", price: "220 AED" }
+            ],
+            features: ["Accès Snow Park", "Manèges illimités", "Gants polaire", "Chocolat chaud"]
         },
         {
             title: "Snow Plus",
-            oldPrice: "350 AED",
-            price: "295 AED",
-            discount: "-16%",
-            features: [
-                "Accès illimité aux manèges",
-                "Accès illimité aux remontées mécaniques",
-                "Un casier standard",
-                "Une paire de gants",
-                "1 option: Cours 60min, 2 tours tyrolienne OU Rencontre pingouins 40min"
-            ]
+            desc: "L'expérience complète avec remontées",
+            category: "Ski Dubai",
+            image: activiteBg,
+            options: [
+                { duration: "Journée", oldPrice: "350 AED", price: "295 AED", discount: "-16%" }
+            ],
+            features: ["Remontées illimitées", "Casier inclus", "Option cours ou pingouins", "Paire de gants"]
         },
         {
             title: "Snow Premium",
-            oldPrice: "550 AED",
-            price: "450 AED",
-            discount: "-18%",
-            features: [
-                "Rencontre pingouins 40min",
-                "Cours découverte 60min",
-                "Accès illimité remontées & manèges",
-                "Casier standard",
-                "Chauffe main + gants",
-                "Une photo dans le Snow Park"
-            ]
-        }
-    ];
-
-    const attractions = [
+            desc: "Le summum de l'expérience Ski Dubai",
+            category: "Ski Dubai",
+            image: activiteBg,
+            options: [
+                { duration: "Journée", oldPrice: "550 AED", price: "450 AED", discount: "-18%" }
+            ],
+            features: ["Rencontre pingouins 40min", "Cours découverte 60min", "Photo incluse", "Chauffe main + gants"],
+            highlight: true
+        },
+        // Attractions
         {
             title: "IMG World",
-            adultPrice: "365 AED",
-            note: "Gratuit -3 ans",
-            icon: "🎢"
+            desc: "Le plus grand parc d'attractions couvert",
+            category: "Attractions",
+            image: activiteBg,
+            options: [
+                { duration: "Adulte", price: "365 AED" }
+            ],
+            features: ["Accès illimité", "Gratuit -3 ans", "Zones Marvel & CN"]
         },
         {
             title: "Ferrari World",
-            adultPrice: "380 AED",
-            childPrice: "295 AED",
-            note: "Enfant -1m30 / Gratuit -3 ans",
-            icon: "🏎️"
-        },
-        {
-            title: "Global Village",
-            price: "30 AED",
-            icon: "🌍"
+            desc: "La passion automobile à Abu Dhabi",
+            category: "Attractions",
+            image: activiteBg,
+            options: [
+                { duration: "Adulte", price: "380 AED" },
+                { duration: "Enfant", price: "295 AED" }
+            ],
+            features: ["Montagnes russes", "Enfants -1m30", "Gratuit -3 ans"]
         },
         {
             title: "Musée du Futur",
-            adultPrice: "149 AED",
-            icon: "🚀"
+            desc: "Un voyage en 2071",
+            category: "Attractions",
+            image: activiteBg,
+            options: [
+                { duration: "Par personne", price: "149 AED" }
+            ],
+            features: ["Billets datés", "Expérience immersive", "Symbole de Dubaï"]
         },
         {
             title: "Burj Khalifa + Aquarium",
-            price: "312 AED",
-            note: "Enfant et Adulte / Gratuit -3 ans",
-            icon: "🏙️"
-        }
-    ];
-
-    const special = [
+            desc: "Le sommet du monde et l'océan",
+            category: "Attractions",
+            image: activiteBg,
+            options: [
+                { duration: "Combo", price: "312 AED" }
+            ],
+            features: ["Niveaux 124 & 125", "Accès Aquarium", "Gratuit -3 ans"]
+        },
+        // Expériences Spéciales
         {
             title: "Dolphinarium",
-            subtitle: "Rencontres avec les dauphins",
-            oldPrice: "900 AED",
-            price: "760 AED",
-            discount: "-16%"
+            desc: "Spectacle et rencontre avec les dauphins",
+            category: "Expériences",
+            image: activiteBg,
+            options: [
+                { duration: "Session", oldPrice: "900 AED", price: "760 AED", discount: "-15%" }
+            ],
+            features: ["Spectacle inclus", "Interaction dauphins", "Photos souvenir"]
         },
         {
             title: "Refuge Animalier",
-            adultPrice: "1000 AED",
-            childPrice: "500 AED",
-            transfert: "500 AED",
-            note: "Gratuit -2ans / Session matin ou après-midi"
-        }
-    ];
-
-    const excursions = [
+            desc: "Approchez les animaux exotiques",
+            category: "Expériences",
+            image: activiteBg,
+            options: [
+                { duration: "Adulte", price: "1000 AED" },
+                { duration: "Enfant", price: "500 AED" }
+            ],
+            features: ["Matin ou après-midi", "Gratuit -2 ans", "Transfert +500 AED"]
+        },
+        // Excursions
         {
-            title: "Oman",
-            adultPrice: "500 AED",
-            childPrice: "350 AED",
-            features: [
-                "Transfert hôtel",
-                "5h de croisière",
-                "Repas, nage, snorkeling",
-                "Bateau banane et pêche",
-                "Visa touriste omanais inclus"
-            ]
+            title: "Oman (Musandam)",
+            desc: "Croisière dans les fjords d'Arabie",
+            category: "Excursions",
+            image: activiteBg,
+            options: [
+                { duration: "Adulte", price: "500 AED" },
+                { duration: "Enfant", price: "350 AED" }
+            ],
+            features: ["Visa inclus", "Déjeuner buffet", "Snorkeling & Pêche", "Transfert hôtel"]
         },
         {
-            title: "Abu Dhabi",
-            price: "600 AED/véhicule",
-            features: [
-                "Visite guidée",
-                "Grande Mosquée",
-                "Louvre Abu Dhabi",
-                "Transfert inclus"
-            ]
+            title: "Abu Dhabi Tour",
+            desc: "Découvrez la capitale des UAE",
+            category: "Excursions",
+            image: activiteBg,
+            options: [
+                { duration: "Par véhicule", price: "600 AED" }
+            ],
+            features: ["Grande Mosquée", "Louvre Abu Dhabi", "Visite guidée", "Transfert inclus"]
         }
     ];
 
@@ -172,230 +196,94 @@ const ActivitesDiverses = () => {
                 </div>
             </section>
 
-            {/* Ski Dubai Section */}
-            <section className="py-20 bg-white">
+            {/* Activities Grid */}
+            <section className="py-20 bg-gray-50">
                 <div className="container mx-auto px-4">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-center mb-12"
-                    >
-                        <h2 className="text-4xl font-bold mb-4">❄️ Ski Dubai</h2>
-                        <p className="text-gray-600">Le ski au cœur du désert !</p>
-                    </motion.div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                        {skiDubai.map((pack, i) => (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {activities.map((activity, i) => (
                             <motion.div
                                 key={i}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.1 }}
-                                className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all relative group"
-                            >
-                                {pack.discount && (
-                                    <div className="absolute -top-3 -right-3 bg-sale text-white font-black text-sm px-4 py-2 rounded-full shadow-lg animate-pulse">
-                                        {pack.discount}
-                                    </div>
-                                )}
-
-                                <h3 className="text-2xl font-bold mb-4 text-primary">{pack.title}</h3>
-
-                                <div className="mb-6">
-                                    {pack.oldPrice && (
-                                        <span className="text-gray-400 line-through text-sm block mb-1">{pack.oldPrice}</span>
-                                    )}
-                                    <span className="text-3xl font-black text-sale">{pack.price}</span>
-                                </div>
-
-                                <ul className="space-y-3 mb-6">
-                                    {pack.features.map((feature, idx) => (
-                                        <li key={idx} className="flex items-start text-sm text-gray-700">
-                                            <span className="text-accent mr-2">✓</span>
-                                            <span>{feature}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-
-                                <Link
-                                    to="/contact"
-                                    className="w-full block text-center bg-primary text-white font-bold py-3 rounded-lg hover:bg-sale transition-colors"
-                                >
-                                    Réserver
-                                </Link>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Attractions Section */}
-            <section className="py-20 bg-gray-50">
-                <div className="container mx-auto px-4">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-center mb-12"
-                    >
-                        <h2 className="text-4xl font-bold mb-4">🎡 Attractions</h2>
-                    </motion.div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                        {attractions.map((attr, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.05 }}
-                                className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all"
+                                className={`rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group relative ${activity.highlight
+                                    ? 'bg-gradient-to-br from-primary to-black text-white'
+                                    : 'bg-white'
+                                    }`}
                             >
-                                <div className="text-4xl mb-3">{attr.icon}</div>
-                                <h3 className="text-xl font-bold mb-3 text-primary">{attr.title}</h3>
-
-                                {attr.price && (
-                                    <p className="text-2xl font-black text-sale mb-2">{attr.price}</p>
-                                )}
-                                {attr.adultPrice && (
-                                    <div className="mb-2">
-                                        <p className="text-lg font-bold text-sale">Adulte: {attr.adultPrice}</p>
-                                        {attr.childPrice && (
-                                            <p className="text-sm text-gray-600">Enfant: {attr.childPrice}</p>
-                                        )}
-                                    </div>
-                                )}
-                                {attr.note && (
-                                    <p className="text-xs text-gray-500 mb-4">{attr.note}</p>
-                                )}
-
-                                <Link
-                                    to="/contact"
-                                    className="w-full block text-center bg-primary text-white font-semibold py-2 rounded-lg hover:bg-sale transition-colors text-sm"
-                                >
-                                    Réserver
-                                </Link>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Special Activities */}
-            <section className="py-20 bg-white">
-                <div className="container mx-auto px-4">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-center mb-12"
-                    >
-                        <h2 className="text-4xl font-bold mb-4">🐬 Expériences Spéciales</h2>
-                    </motion.div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                        {special.map((item, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 shadow-lg relative"
-                            >
-                                {item.discount && (
-                                    <div className="absolute -top-3 -right-3 bg-sale text-white font-black text-sm px-4 py-2 rounded-full shadow-lg animate-pulse">
-                                        {item.discount}
+                                {activity.options[0]?.discount && (
+                                    <div className="absolute top-4 right-4 z-10 bg-sale text-white font-black text-xs px-3 py-1 rounded-full shadow-lg transform rotate-3 animate-pulse">
+                                        OFFRE {activity.options[0].discount}
                                     </div>
                                 )}
 
-                                <h3 className="text-2xl font-bold mb-2 text-primary">{item.title}</h3>
-                                {item.subtitle && (
-                                    <p className="text-sm text-gray-600 mb-4">{item.subtitle}</p>
-                                )}
-
-                                {item.oldPrice && (
-                                    <div className="mb-4">
-                                        <span className="text-gray-400 line-through text-sm block">{item.oldPrice}</span>
-                                        <span className="text-3xl font-black text-sale">{item.price}</span>
+                                <div className="h-48 relative overflow-hidden">
+                                    <img
+                                        src={activity.image}
+                                        alt={activity.title}
+                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    />
+                                    <div className="absolute top-4 left-4 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full">
+                                        <span className="text-xs font-semibold text-white">
+                                            {activity.category}
+                                        </span>
                                     </div>
-                                )}
+                                </div>
 
-                                {item.adultPrice && (
-                                    <div className="mb-4">
-                                        <p className="text-lg font-bold text-sale">Adulte: {item.adultPrice}</p>
-                                        <p className="text-sm text-gray-600">Enfant: {item.childPrice}</p>
-                                        {item.transfert && (
-                                            <p className="text-sm text-gray-600 mt-2">Transfert A/R: {item.transfert}</p>
-                                        )}
+                                <div className="p-6">
+                                    <h3 className={`text-2xl font-bold mb-2 ${activity.highlight ? 'text-white' : 'text-primary'}`}>
+                                        {activity.title}
+                                    </h3>
+                                    <p className={`mb-4 text-sm ${activity.highlight ? 'text-white/80' : 'text-gray-500'}`}>
+                                        {activity.desc}
+                                    </p>
+
+                                    <ul className="space-y-2 mb-6">
+                                        {activity.features.map((feature, idx) => (
+                                            <li key={idx} className={`flex items-center text-sm ${activity.highlight ? 'text-white/80' : 'text-gray-600'}`}>
+                                                <div className={`w-1.5 h-1.5 rounded-full mr-2 ${activity.highlight ? 'bg-accent' : 'bg-primary'}`} />
+                                                {feature}
+                                            </li>
+                                        ))}
+                                    </ul>
+
+                                    <div className="border-t pt-4 space-y-3" style={{ borderColor: activity.highlight ? 'rgba(255,255,255,0.2)' : undefined }}>
+                                        {activity.options.map((option, idx) => (
+                                            <div key={idx} className={`p-3 rounded-xl ${activity.highlight ? 'bg-white/10' : 'bg-gray-50'}`}>
+                                                <div className="flex items-center justify-between mb-1">
+                                                    <span className={`text-xs font-bold uppercase tracking-wider ${activity.highlight ? 'text-white/60' : 'text-gray-400'}`}>
+                                                        {option.duration}
+                                                    </span>
+                                                    {option.discount && (
+                                                        <span className="text-[10px] bg-sale text-white px-2 py-0.5 rounded-full font-black">
+                                                            {option.discount}
+                                                        </span>
+                                                    )}
+                                                </div>
+                                                <div className="flex items-center gap-2">
+                                                    {option.oldPrice && (
+                                                        <span className={`text-sm line-through ${activity.highlight ? 'text-white/40' : 'text-gray-400'}`}>
+                                                            {option.oldPrice}
+                                                        </span>
+                                                    )}
+                                                    <span className={`text-xl font-black ${activity.highlight ? 'text-accent' : 'text-sale'}`}>
+                                                        {option.price}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        ))}
+                                        <Link
+                                            to="/contact"
+                                            className={`w-full block text-center font-bold py-3 rounded-xl transition-all mt-4 ${activity.highlight
+                                                ? 'bg-accent text-white hover:bg-white hover:text-primary shadow-lg shadow-accent/20'
+                                                : 'bg-primary text-white hover:bg-sale shadow-md'
+                                                }`}
+                                        >
+                                            Réserver maintenant
+                                        </Link>
                                     </div>
-                                )}
-
-                                {item.note && (
-                                    <p className="text-xs text-gray-500 mb-4">{item.note}</p>
-                                )}
-
-                                <Link
-                                    to="/contact"
-                                    className="w-full block text-center bg-primary text-white font-bold py-3 rounded-lg hover:bg-sale transition-colors"
-                                >
-                                    Réserver
-                                </Link>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Excursions Section */}
-            <section className="py-20 bg-gray-50">
-                <div className="container mx-auto px-4">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-center mb-12"
-                    >
-                        <h2 className="text-4xl font-bold mb-4">🌏 Excursions</h2>
-                    </motion.div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                        {excursions.map((exc, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all"
-                            >
-                                <h3 className="text-3xl font-bold mb-4 text-primary">{exc.title}</h3>
-
-                                {exc.adultPrice && (
-                                    <div className="mb-4">
-                                        <p className="text-xl font-bold text-sale">Adulte: {exc.adultPrice}</p>
-                                        <p className="text-sm text-gray-600">Enfant: {exc.childPrice}</p>
-                                    </div>
-                                )}
-                                {exc.price && (
-                                    <p className="text-2xl font-black text-sale mb-4">{exc.price}</p>
-                                )}
-
-                                <ul className="space-y-2 mb-6">
-                                    {exc.features.map((feature, idx) => (
-                                        <li key={idx} className="flex items-center text-sm text-gray-700">
-                                            <span className="text-accent mr-2">✓</span>
-                                            {feature}
-                                        </li>
-                                    ))}
-                                </ul>
-
-                                <Link
-                                    to="/contact"
-                                    className="w-full block text-center bg-primary text-white font-bold py-3 rounded-lg hover:bg-sale transition-colors"
-                                >
-                                    Réserver cette excursion
-                                </Link>
+                                </div>
                             </motion.div>
                         ))}
                     </div>
