@@ -72,7 +72,11 @@ const ActivitesAquatiques = () => {
 
     return (
         <>
-            <SEO title="Activités Aquatiques" description="Découvrez nos activités aquatiques à Dubaï : Jet Ski, Yacht, Plongée et plus." />
+            <SEO
+                title="Activités Aquatiques Dubaï | Jet Ski, Jet Car & Flyboard"
+                description="Vivez des sensations fortes sur les eaux du Golfe Persique. Jet Ski à Dubai Marina, Jet Car, Flyboard et plongée sous-marine. Profitez de nos offres à -30% !"
+                keywords="jet ski dubaï, jet car dubaï, flyboard dubaï, plongée dubaï, activités nautiques dubaï, loisirs aquatiques dubaï"
+            />
 
             {/* Hero Section */}
             <section className="relative h-[60vh] overflow-hidden">

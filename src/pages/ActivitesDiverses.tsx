@@ -140,7 +140,11 @@ const ActivitesDiverses = () => {
 
     return (
         <>
-            <SEO title="Activités Diverses" description="Ski Dubai, parcs d'attractions, excursions et bien plus à Dubaï." />
+            <SEO
+                title="Activités & Excursions Dubaï | Ski Dubai, Burj Khalifa & Attractions"
+                description="Découvrez les meilleures attractions de Dubaï : Ski Dubai au Mall of the Emirates, Burj Khalifa, IMG World, Ferrari World et bien plus. Réservez vos billets coupe-file."
+                keywords="ski dubaï, burj khalifa billets, ferrari world dubaï, img world dubaï, attractions dubaï, excursions dubaï, activités famille dubaï"
+            />
 
             {/* Hero Section */}
             <section className="relative h-[60vh] overflow-hidden">

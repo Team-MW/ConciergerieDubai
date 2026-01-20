@@ -15,7 +15,11 @@ const Services = () => {
 
     return (
         <>
-            <SEO title="Services" description="Découvrez nos services de conciergerie de luxe à Dubaï." />
+            <SEO
+                title="Nos Services Conciergerie Dubaï | Buggy, Yacht & Expériences VIP"
+                description="Découvrez nos prestations exclusives à Dubaï : location de Buggy Can-Am, tours en hélicoptère, yachts privés et conciergerie VIP sur mesure pour un séjour de luxe."
+                keywords="yacht privé dubaï, hélicoptère dubaï, conciergerie vip dubaï, location buggy dubaï, services luxe dubaï"
+            />
             <div className="pt-32 pb-20 bg-gray-50 min-h-screen">
                 <div className="container mx-auto px-4">
                     <motion.div

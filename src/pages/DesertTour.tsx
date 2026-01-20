@@ -140,7 +140,11 @@ const DesertTour = () => {
 
     return (
         <>
-            <SEO title="Desert Tour" description="Vivez l'aventure du désert à Dubaï : Quads, Buggies, Dunes Bashing et plus." />
+            <SEO
+                title="Desert Tour Dubaï | Quad, Buggy & Safari dans le Désert"
+                description="Réservez votre aventure dans le désert de Dubaï. Quad Yamaha, Buggy Can-Am Maverick 2024, Dunes Bashing et dîner traditionnel. Vivez une expérience inoubliable !"
+                keywords="safari désert dubaï, buggy dubaï, quad dubaï, dunes bashing, can-am maverick dubaï, excursion désert dubaï"
+            />
 
             {/* Hero Section */}
             <section className="relative h-[60vh] overflow-hidden">

@@ -6,7 +6,11 @@ import SEO from '../components/SEO';
 const Contact = () => {
     return (
         <>
-            <SEO title="Contact" description="Contactez-nous pour réserver votre buggy ou organiser votre séjour à Dubaï." />
+            <SEO
+                title="Contact Conciergerie Dubaï | Réservation & Informations"
+                description="Besoin d'aide pour organiser votre voyage à Dubaï ? Contactez notre équipe de conciergerie 24/7 pour toute réservation d'activité ou demande d'information."
+                keywords="contact conciergerie dubaï, réservation activités dubaï, aide voyage dubaï, info séjour dubaï"
+            />
             <div className="pt-32 pb-20 bg-gray-50 min-h-screen">
                 <div className="container mx-auto px-4">
                     <motion.div
