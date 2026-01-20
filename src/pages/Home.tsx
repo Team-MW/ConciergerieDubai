@@ -1,25 +1,63 @@
 import { motion, type Variants } from 'framer-motion';
-import { ArrowRight, Star, Shield, Clock } from 'lucide-react';
+import { Star, Shield, Clock } from 'lucide-react';
 import heroImage from '../assets/hero.jpg';
 import ktmImage from '../assets/KTM.jpg';
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
+import GoogleReviews from '../components/GoogleReviews';
+import FAQ from '../components/FAQ';
+
+const homeFaqs = [
+    {
+        question: "Comment réserver une activité ?",
+        answer: "La réservation est simple ! Vous pouvez nous contacter directement via WhatsApp ou via notre formulaire de contact. Nous confirmons ensuite la disponibilité et les détails avec vous."
+    },
+    {
+        question: "Quels sont les moyens de paiement acceptés ?",
+        answer: "Nous acceptons les paiements en espèces (AED, EUR, USD), par virement bancaire ou via lien de paiement sécurisé."
+    },
+    {
+        question: "Le transfert depuis l'hôtel est-il inclus ?",
+        answer: "Oui, la plupart de nos packs d'activités incluent le transfert privé aller-retour depuis votre hôtel à Dubaï."
+    },
+    {
+        question: "Les activités sont-elles accessibles aux enfants ?",
+        answer: "Dubaï est une destination très familiale. La majorité de nos activités sont accessibles aux enfants, avec des équipements de sécurité adaptés. Certaines activités comme le Jet Ski ont un âge minimum requis."
+    }
+];
 
 const sectionVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
 };
 
+const services = [
+    {
+        title: "Activités & Loisirs",
+        desc: "Du désert aux parcs d'attractions, nous organisons vos sorties.",
+        icon: Star
+    },
+    {
+        title: "Sécurité & Confort",
+        desc: "Véhicules récents et accompagnement professionnel garanti.",
+        icon: Shield
+    },
+    {
+        title: "Disponibilité 24/7",
+        desc: "Une équipe à votre écoute pour toutes vos demandes.",
+        icon: Clock
+    }
+];
+
 const Home = () => {
     return (
         <>
             <SEO
-                title="Accueil"
-                description="Conciergerie de luxe à Dubaï. Location de buggy, expériences exclusives et services sur mesure. Réservez votre aventure dès maintenant."
+                title="Conciergerie de Luxe à Dubaï | Expériences Exclusives"
+                description="Découvrez le meilleur de Dubaï avec notre conciergerie. Desert tour, jet ski, activités de luxe et accompagnement sur mesure."
             />
-
             {/* Hero Section */}
-            <section className="relative h-screen w-full overflow-hidden">
+            <section className="relative h-screen flex items-center justify-center overflow-hidden">
                 <div
                     className="absolute inset-0 z-0"
                     style={{
@@ -31,60 +69,39 @@ const Home = () => {
                     <div className="absolute inset-0 bg-black/40" />
                 </div>
 
-                <div className="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-4">
+                <div className="container mx-auto px-4 z-10 text-center text-white">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1, delay: 0.2 }}
-                        className="max-w-4xl mx-auto"
+                        transition={{ duration: 1 }}
                     >
-                        <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight">
-                            L'EXCELLENCE À <span className="text-accent">DUBAI</span>
-                        </h1>
-                        <p className="text-xl md:text-2xl mb-10 font-light text-gray-200 max-w-2xl mx-auto">
-                            Vivez des expériences inoubliables. Location de buggy premium, conciergerie VIP et aventures sur mesure.
-                        </p>
-                        <Link to="/contact" className="inline-flex items-center gap-3 bg-accent text-primary px-8 py-4 rounded-full text-lg font-semibold hover:bg-white transition-all transform hover:scale-105">
-                            Réserver maintenant <ArrowRight size={20} />
+                        <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">Vivez Dubaï <br /><span className="text-accent italic">Sans Limites</span></h1>
+                        <p className="text-xl md:text-2xl mb-10 max-w-2xl mx-auto font-light">Votre conciergerie haut de gamme pour des expériences inoubliables et un service sur mesure.</p>
+                        <Link to="/services" className="bg-white text-primary px-10 py-4 rounded-full text-lg font-semibold hover:bg-accent transition-all transform hover:scale-105 inline-block shadow-xl">
+                            Découvrir nos services
                         </Link>
                     </motion.div>
                 </div>
             </section>
 
-            {/* Services Section */}
-            <section className="py-24 bg-white text-primary">
+            {/* Quick Services */}
+            <section className="py-20 bg-white">
                 <div className="container mx-auto px-4">
-                    <motion.div
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
-                        variants={sectionVariants}
-                        className="text-center mb-16"
-                    >
-                        <h2 className="text-4xl font-bold mb-4">Nos Services Exclusifs</h2>
-                        <p className="text-gray-600 max-w-2xl mx-auto">Nous sélectionnons pour vous les meilleures offres pour garantir une expérience sans pareil.</p>
-                    </motion.div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {[
-                            { title: "Buggy Safari", icon: <Star className="w-8 h-8 text-accent" />, desc: "Des virées palpitantes dans le désert avec nos véhicules haut de gamme." },
-                            { title: "Conciergerie VIP", icon: <Shield className="w-8 h-8 text-accent" />, desc: "Service 24/7 pour répondre à toutes vos demandes, même les plus folles." },
-                            { title: "Location Yacht", icon: <Clock className="w-8 h-8 text-accent" />, desc: "Croisières privées autour de la Palm et de la Marina." }
-                        ].map((service, index) => (
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                        {services.map((service, idx) => (
                             <motion.div
-                                key={index}
-                                variants={sectionVariants}
+                                key={idx}
+                                className="p-8 rounded-3xl bg-gray-50 hover:shadow-xl transition-shadow border border-gray-100"
                                 initial="hidden"
                                 whileInView="visible"
-                                viewport={{ once: true, margin: "-100px" }}
-                                transition={{ delay: index * 0.2 }}
-                                className="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-shadow border border-transparent hover:border-gray-100"
+                                viewport={{ once: true }}
+                                variants={sectionVariants}
                             >
-                                <div className="bg-white w-16 h-16 rounded-full flex items-center justify-center shadow-sm mb-6 mx-auto">
-                                    {service.icon}
+                                <div className="w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                                    <service.icon size={28} />
                                 </div>
-                                <h3 className="text-xl font-bold mb-3 text-center">{service.title}</h3>
-                                <p className="text-gray-500 text-center leading-relaxed">{service.desc}</p>
+                                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+                                <p className="text-gray-500 leading-relaxed font-light">{service.desc}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -93,7 +110,6 @@ const Home = () => {
 
             {/* Feature / Offer Section (Dark) */}
             <section className="py-24 relative overflow-hidden">
-                {/* Background Image */}
                 <div
                     className="absolute inset-0 z-0"
                     style={{
@@ -106,7 +122,6 @@ const Home = () => {
                 </div>
 
                 <div className="container mx-auto px-4 relative z-10">
-
                     <motion.div
                         className="max-w-2xl"
                         variants={sectionVariants}
@@ -115,7 +130,7 @@ const Home = () => {
                         viewport={{ once: true }}
                     >
                         <div className="flex flex-col items-start mb-6">
-                            <span className="text-accent tracking-widest uppercase text-xs font-bold mb-2">Offre Signature</span>
+                            <span className="text-accent tracking-widest uppercase text-xs font-bold mb-2 text-white">Offre Signature</span>
                             <h3 className="text-4xl font-bold mb-4 text-white">Pack Aventure Désert</h3>
                             <div className="flex items-baseline gap-3">
                                 <span className="text-4xl font-light text-white">840 AED</span>
@@ -139,6 +154,10 @@ const Home = () => {
                     </motion.div>
                 </div>
             </section>
+
+            <GoogleReviews />
+
+            <FAQ items={homeFaqs} />
 
             {/* CTA Section */}
             <section className="py-20 bg-gray-50">

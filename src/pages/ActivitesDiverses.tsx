@@ -2,6 +2,26 @@ import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import activiteBg from '../assets/activite.jpg';
+import FAQ from '../components/FAQ';
+
+const diversesFaqs = [
+    {
+        question: "Les billets pour les attractions sont-ils coupe-file ?",
+        answer: "La plupart de nos billets pour les attractions majeures (Burj Khalifa, Musée du Futur) sont des billets datés avec créneau horaire, ce qui limite considérablement l'attente."
+    },
+    {
+        question: "Est-ce que l'équipement est inclus pour Ski Dubai ?",
+        answer: "Oui, tous les packs Ski Dubai incluent la location de l'équipement complet (veste, pantalon, skis/snowboard, chaussures, chaussettes jetables). Seuls les gants sont en supplément ou inclus selon le pack."
+    },
+    {
+        question: "Combien de temps à l'avance faut-il réserver ?",
+        answer: "Nous conseillons de réserver au moins 48h à l'avance, surtout pour les attractions très prisées comme le Musée du Futur qui est souvent complet plusieurs jours à l'avance."
+    },
+    {
+        question: "Comment recevoir mes billets ?",
+        answer: "Une fois la réservation confirmée et le paiement effectué, nous vous envoyons vos e-billets directement sur WhatsApp ou par email. Il vous suffira de les présenter sur votre téléphone à l'entrée."
+    }
+];
 
 const ActivitesDiverses = () => {
     const skiDubai = [
@@ -377,6 +397,8 @@ const ActivitesDiverses = () => {
                     </div>
                 </div>
             </section>
+
+            <FAQ items={diversesFaqs} />
         </>
     );
 };

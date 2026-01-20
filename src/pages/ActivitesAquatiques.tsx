@@ -3,6 +3,26 @@ import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import jetskiBg from '../assets/man-drive-jetski.jpg';
 import jetskiCard from '../assets/fergeg.webp';
+import FAQ from '../components/FAQ';
+
+const waterFaqs = [
+    {
+        question: "Faut-il savoir nager pour le Jet Ski ?",
+        answer: "Il est préférable de savoir nager, mais vous porterez obligatoirement un gilet de sauvetage certifié pendant toute l'activité. Nos guides sont également là pour assurer votre sécurité."
+    },
+    {
+        question: "Quel est l'âge minimum pour le Jet Ski ?",
+        answer: "Pour conduire un Jet Ski à Dubaï, l'âge minimum est généralement de 16 ans. Les enfants à partir de 5 ans peuvent être passagers avec un adulte."
+    },
+    {
+        question: "Est-ce que les photos et vidéos sont incluses ?",
+        answer: "Certains de nos packs incluent des photos prises par nos guides. Pour les autres, vous pouvez demander l'option photo à votre arrivée."
+    },
+    {
+        question: "Où se situe le point de départ des activités ?",
+        answer: "Le point de départ dépend de l'activité choisie, mais la plupart se situent à proximité de Dubai Marina ou Jumeirah. Toutes les informations précises vous seront envoyées lors de la réservation."
+    }
+];
 
 const ActivitesAquatiques = () => {
     const activities = [
@@ -153,6 +173,8 @@ const ActivitesAquatiques = () => {
                     </div>
                 </div>
             </section>
+
+            <FAQ items={waterFaqs} />
         </>
     );
 };

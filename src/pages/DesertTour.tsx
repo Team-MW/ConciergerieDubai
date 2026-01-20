@@ -6,6 +6,26 @@ import desertBg from '../assets/bacgroundsection.jpg';
 import ktmImg from '../assets/KTM.jpg';
 import quadImg from '../assets/QUAD.jpg';
 import buggyImg from '../assets/buggy.jpg';
+import FAQ from '../components/FAQ';
+
+const desertFaqs = [
+    {
+        question: "Quel est le meilleur moment pour faire un Desert Tour ?",
+        answer: "Nous recommandons les sorties en fin d'après-midi (vers 15h30-16h00) pour profiter du coucher de soleil sur les dunes et de températures plus clémentes."
+    },
+    {
+        question: "Faut-il un permis de conduire pour le buggy ou le quad ?",
+        answer: "Non, aucun permis de conduire n'est requis pour piloter nos quads et buggies en plein désert. Nos guides vous donneront toutes les instructions nécessaires avant le départ."
+    },
+    {
+        question: "Comment se déroule le transfert ?",
+        answer: "Un chauffeur vient vous chercher directement à votre hôtel dans un véhicule climatisé et vous conduit sur le lieu de l'activité. Le transfert retour est également inclus dans la plupart de nos packs."
+    },
+    {
+        question: "Quelle tenue est conseillée ?",
+        answer: "Privilégiez des vêtements confortables et légers. Prévoyez une paire de lunettes de soleil, de la crème solaire et éventuellement un petit gilet pour la fin de journée car le désert peut se rafraîchir rapidement."
+    }
+];
 
 const DesertTour = () => {
     const activities = [
@@ -178,8 +198,8 @@ const DesertTour = () => {
                                         />
                                     ) : (
                                         <div className={`h-full ${activity.highlight
-                                                ? 'bg-gradient-to-br from-orange-500 to-amber-600'
-                                                : 'bg-gradient-to-br from-orange-400 to-amber-500'
+                                            ? 'bg-gradient-to-br from-orange-500 to-amber-600'
+                                            : 'bg-gradient-to-br from-orange-400 to-amber-500'
                                             } flex items-center justify-center`}>
                                             <Car className="w-20 h-20 text-white/30" />
                                         </div>
@@ -251,6 +271,8 @@ const DesertTour = () => {
                     </div>
                 </div>
             </section>
+
+            <FAQ items={desertFaqs} />
         </>
     );
 };
