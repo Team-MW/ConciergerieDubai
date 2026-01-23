@@ -110,11 +110,27 @@ const Home = () => {
                 <div className="absolute top-1/2 left-0 -translate-y-1/2 opacity-[0.08] pointer-events-none select-none z-0 -ml-20">
                     <span className="font-arabic text-[18rem] leading-none text-primary whitespace-nowrap rotate-12">سياحة</span>
                 </div>
+                <div className="absolute top-[10%] right-[5%] opacity-[0.03] pointer-events-none select-none z-0 rotate-[45deg] hidden lg:block">
+                    <span className="font-arabic text-[15rem] leading-none text-primary whitespace-nowrap">عظمة</span>
+                </div>
+                <div className="absolute bottom-[20%] left-[20%] opacity-[0.02] pointer-events-none select-none z-0 -rotate-12 hidden lg:block">
+                    <span className="font-arabic text-[12rem] leading-none text-primary whitespace-nowrap">مجرة</span>
+                </div>
+                <div className="absolute top-[60%] right-[30%] opacity-[0.01] pointer-events-none select-none z-0 rotate-90 hidden lg:block">
+                    <span className="font-arabic text-[20rem] leading-none text-primary whitespace-nowrap">سلطان</span>
+                </div>
 
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="absolute top-0 left-0 opacity-[0.05] pointer-events-none select-none z-0 -ml-10">
                         <span className="font-arabic text-[12rem] leading-none text-primary whitespace-nowrap -rotate-90">كرم</span>
                     </div>
+                    <div className="absolute bottom-0 right-0 opacity-[0.04] pointer-events-none select-none z-0 rotate-12 hidden lg:block">
+                        <span className="font-arabic text-[14rem] leading-none text-primary whitespace-nowrap">تاج</span>
+                    </div>
+                    <div className="absolute top-1/2 left-1/2 opacity-[0.01] pointer-events-none select-none z-0 -rotate-[30deg] hidden lg:block">
+                        <span className="font-arabic text-[25rem] leading-none text-primary whitespace-nowrap">دانة</span>
+                    </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                         {services.map((service, idx) => (
                             <motion.div
@@ -202,6 +218,19 @@ const Home = () => {
                 <div className="absolute top-0 left-0 opacity-[0.05] pointer-events-none select-none z-0">
                     <span className="font-arabic text-[15rem] leading-none text-primary whitespace-nowrap -rotate-12">أناقة</span>
                 </div>
+                <div className="absolute top-1/2 left-1/3 opacity-[0.02] pointer-events-none select-none z-0 rotate-[20deg] hidden lg:block">
+                    <span className="font-arabic text-[18rem] leading-none text-primary whitespace-nowrap">سرور</span>
+                </div>
+                <div className="absolute bottom-1/4 right-[25%] opacity-[0.03] pointer-events-none select-none z-0 -rotate-[15deg] hidden lg:block">
+                    <span className="font-arabic text-[14rem] leading-none text-primary whitespace-nowrap">جمal</span>
+                </div>
+                <div className="absolute top-[10%] right-[10%] opacity-[0.01] pointer-events-none select-none z-0 rotate-45 hidden lg:block">
+                    <span className="font-arabic text-[22rem] leading-none text-primary whitespace-nowrap">عظمة</span>
+                </div>
+                <div className="absolute bottom-[10%] left-[10%] opacity-[0.02] pointer-events-none select-none z-0 -rotate-[60deg] hidden lg:block">
+                    <span className="font-arabic text-[16rem] leading-none text-primary whitespace-nowrap">تراث</span>
+                </div>
+
                 <div className="container mx-auto px-4 text-center relative z-10">
                     <motion.div
                         initial="hidden"

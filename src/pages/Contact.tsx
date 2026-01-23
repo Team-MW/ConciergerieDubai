@@ -11,7 +11,18 @@ const Contact = () => {
                 description="Besoin d'aide pour organiser votre voyage à Dubaï ? Contactez notre équipe de conciergerie 24/7 pour toute réservation d'activité ou demande d'information."
                 keywords="contact conciergerie dubaï, réservation activités dubaï, aide voyage dubaï, info séjour dubaï"
             />
-            <div className="pt-32 pb-20 bg-gray-50 min-h-screen">
+            <div className="pt-32 pb-20 bg-gray-50 min-h-screen relative overflow-hidden">
+                <div className="absolute top-40 -left-20 opacity-[0.05] pointer-events-none select-none z-0 rotate-12 hidden lg:block">
+                    <span className="font-arabic text-[18rem] leading-none text-primary whitespace-nowrap">اتصال</span>
+                </div>
+
+                <div className="absolute top-1/2 right-0 opacity-[0.03] pointer-events-none select-none z-0 -rotate-45 hidden lg:block">
+                    <span className="font-arabic text-[15rem] leading-none text-primary whitespace-nowrap">خدمة</span>
+                </div>
+
+                <div className="absolute bottom-20 left-1/4 opacity-[0.04] pointer-events-none select-none z-0 rotate-12 hidden lg:block">
+                    <span className="font-arabic text-[12rem] leading-none text-primary whitespace-nowrap">ثقة</span>
+                </div>
                 <div className="container mx-auto px-4">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}

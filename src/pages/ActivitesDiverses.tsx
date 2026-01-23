@@ -1,7 +1,17 @@
 import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
-import activiteBg from '../assets/dubai-sensations-fortes.png';
+import activiteBg from '../assets/abu_dhabi_mosque.png';
+import dolphinariumImg from '../assets/08778ab8bdb17667f9d2ec1f35cff6ed-1878-dubai-dubai-dolphinarium-tickets--dolphin---seal-show-03.jpg';
+import skiSnowPark from '../assets/ski_dubai_snow_park.png';
+import skiSlope from '../assets/ski_dubai_slope.png';
+import skiPenguins from '../assets/ski_dubai_penguins.png';
+import imgWorldImg from '../assets/img_world_dubai.png';
+import ferrariWorldImg from '../assets/ferrari_world.png';
+import museumFutureImg from '../assets/museum_future.png';
+import animalRefugeImg from '../assets/animal_refuge.png';
+import omanCruiseImg from '../assets/oman_cruise.png';
+import abuDhabiMosqueImg from '../assets/abu_dhabi_mosque.png';
 import FAQ from '../components/FAQ';
 
 const diversesFaqs = [
@@ -34,7 +44,7 @@ interface Activity {
     title: string;
     desc: string;
     category: string;
-    image: string;
+    image: string | string[];
     options: ActivityOption[];
     features: string[];
     highlight?: boolean;
@@ -47,7 +57,7 @@ const ActivitesDiverses = () => {
             title: "Snow Classique",
             desc: "Accès au Snow Park et manèges",
             category: "Ski Dubai",
-            image: activiteBg,
+            image: skiSnowPark,
             options: [
                 { duration: "Journée", price: "220 AED" }
             ],
@@ -57,7 +67,7 @@ const ActivitesDiverses = () => {
             title: "Snow Plus",
             desc: "L'expérience complète avec remontées",
             category: "Ski Dubai",
-            image: activiteBg,
+            image: skiSlope,
             options: [
                 { duration: "Journée", oldPrice: "350 AED", price: "295 AED", discount: "-16%" }
             ],
@@ -67,7 +77,7 @@ const ActivitesDiverses = () => {
             title: "Snow Premium",
             desc: "Le summum de l'expérience Ski Dubai",
             category: "Ski Dubai",
-            image: activiteBg,
+            image: skiPenguins,
             options: [
                 { duration: "Journée", oldPrice: "550 AED", price: "450 AED", discount: "-18%" }
             ],
@@ -79,7 +89,7 @@ const ActivitesDiverses = () => {
             title: "IMG World",
             desc: "Le plus grand parc d'attractions couvert",
             category: "Attractions",
-            image: activiteBg,
+            image: imgWorldImg,
             options: [
                 { duration: "Adulte", price: "365 AED" }
             ],
@@ -89,7 +99,7 @@ const ActivitesDiverses = () => {
             title: "Ferrari World",
             desc: "La passion automobile à Abu Dhabi",
             category: "Attractions",
-            image: activiteBg,
+            image: ferrariWorldImg,
             options: [
                 { duration: "Adulte", price: "380 AED" },
                 { duration: "Enfant", price: "295 AED" }
@@ -100,28 +110,19 @@ const ActivitesDiverses = () => {
             title: "Musée du Futur",
             desc: "Un voyage en 2071",
             category: "Attractions",
-            image: activiteBg,
+            image: museumFutureImg,
             options: [
                 { duration: "Par personne", price: "149 AED" }
             ],
             features: ["Billets datés", "Expérience immersive", "Symbole de Dubaï"]
         },
-        {
-            title: "Burj Khalifa + Aquarium",
-            desc: "Le sommet du monde et l'océan",
-            category: "Attractions",
-            image: activiteBg,
-            options: [
-                { duration: "Combo", price: "312 AED" }
-            ],
-            features: ["Niveaux 124 & 125", "Accès Aquarium", "Gratuit -3 ans"]
-        },
+
         // Expériences Spéciales
         {
             title: "Dolphinarium",
             desc: "Spectacle et rencontre avec les dauphins",
             category: "Expériences",
-            image: activiteBg,
+            image: dolphinariumImg,
             options: [
                 { duration: "Session", oldPrice: "900 AED", price: "760 AED", discount: "-15%" }
             ],
@@ -131,7 +132,7 @@ const ActivitesDiverses = () => {
             title: "Refuge Animalier",
             desc: "Approchez les animaux exotiques",
             category: "Expériences",
-            image: activiteBg,
+            image: animalRefugeImg,
             options: [
                 { duration: "Adulte", price: "1000 AED" },
                 { duration: "Enfant", price: "500 AED" }
@@ -143,7 +144,7 @@ const ActivitesDiverses = () => {
             title: "Oman (Musandam)",
             desc: "Croisière dans les fjords d'Arabie",
             category: "Excursions",
-            image: activiteBg,
+            image: omanCruiseImg,
             options: [
                 { duration: "Adulte", price: "500 AED" },
                 { duration: "Enfant", price: "350 AED" }
@@ -154,7 +155,7 @@ const ActivitesDiverses = () => {
             title: "Abu Dhabi Tour",
             desc: "Découvrez la capitale des UAE",
             category: "Excursions",
-            image: activiteBg,
+            image: abuDhabiMosqueImg,
             options: [
                 { duration: "Par véhicule", price: "600 AED" }
             ],
@@ -211,17 +212,44 @@ const ActivitesDiverses = () => {
 
             {/* Activities Grid */}
             <section className="py-20 bg-gray-50 relative overflow-hidden">
-                <div className="absolute top-20 -left-20 opacity-[0.12] pointer-events-none select-none z-0 rotate-90 hidden lg:block">
+                {/* Massive Arabic Background Pattern */}
+                <div className="absolute top-20 -left-20 opacity-[0.08] pointer-events-none select-none z-0 rotate-90 hidden lg:block">
                     <span className="font-arabic text-[22rem] leading-none text-primary whitespace-nowrap">فخامة</span>
                 </div>
-
                 <div className="absolute top-1/2 right-0 opacity-[0.04] pointer-events-none select-none z-0 rotate-[30deg] hidden lg:block">
                     <span className="font-arabic text-[25rem] leading-none text-primary whitespace-nowrap">ترفيه</span>
                 </div>
-
+                <div className="absolute top-1/3 left-1/4 opacity-[0.02] pointer-events-none select-none z-0 rotate-[15deg] hidden lg:block">
+                    <span className="font-arabic text-[15rem] leading-none text-primary whitespace-nowrap">إثارة</span>
+                </div>
+                <div className="absolute top-2/3 right-1/4 opacity-[0.03] pointer-events-none select-none z-0 -rotate-[10deg] hidden lg:block">
+                    <span className="font-arabic text-[12rem] leading-none text-primary whitespace-nowrap">روعة</span>
+                </div>
                 <div className="absolute bottom-40 -right-20 opacity-[0.08] pointer-events-none select-none z-0 -rotate-45 hidden lg:block">
                     <span className="font-arabic text-[15rem] leading-none text-primary whitespace-nowrap">جودة</span>
                 </div>
+                <div className="absolute top-0 right-1/2 opacity-[0.04] pointer-events-none select-none z-0 rotate-45 hidden lg:block">
+                    <span className="font-arabic text-[10rem] leading-none text-primary whitespace-nowrap">خيال</span>
+                </div>
+                <div className="absolute top-[10%] left-[10%] opacity-[0.02] pointer-events-none select-none z-0 -rotate-12 hidden lg:block">
+                    <span className="font-arabic text-[14rem] leading-none text-primary whitespace-nowrap">فرحة</span>
+                </div>
+                <div className="absolute bottom-[10%] left-[30%] opacity-[0.03] pointer-events-none select-none z-0 rotate-[25deg] hidden lg:block">
+                    <span className="font-arabic text-[18rem] leading-none text-primary whitespace-nowrap">ضحكة</span>
+                </div>
+                <div className="absolute top-[60%] left-[45%] opacity-[0.01] pointer-events-none select-none z-0 rotate-0 hidden lg:block">
+                    <span className="font-arabic text-[22rem] leading-none text-primary whitespace-nowrap">باهر</span>
+                </div>
+                <div className="absolute bottom-[40%] left-[5%] opacity-[0.02] pointer-events-none select-none z-0 -rotate-90 hidden lg:block">
+                    <span className="font-arabic text-[13rem] leading-none text-primary whitespace-nowrap">مغامر</span>
+                </div>
+                <div className="absolute top-[80%] right-[10%] opacity-[0.02] pointer-events-none select-none z-0 rotate-[60deg] hidden lg:block">
+                    <span className="font-arabic text-[16rem] leading-none text-primary whitespace-nowrap">رحلة</span>
+                </div>
+                <div className="absolute top-[40%] right-[40%] opacity-[0.01] pointer-events-none select-none z-0 -rotate-[15deg] hidden lg:block">
+                    <span className="font-arabic text-[20rem] leading-none text-primary whitespace-nowrap">ذكرى</span>
+                </div>
+
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {activities.map((activity, i) => (
@@ -241,13 +269,26 @@ const ActivitesDiverses = () => {
                                     </div>
                                 )}
 
-                                <div className="h-48 relative overflow-hidden">
-                                    <img
-                                        src={activity.image}
-                                        alt={activity.title}
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                    />
-                                    <div className="absolute top-4 left-4 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full">
+                                <div className="h-48 relative overflow-hidden flex">
+                                    {Array.isArray(activity.image) ? (
+                                        activity.image.map((img, idx) => (
+                                            <div key={idx} className="relative flex-1 h-full overflow-hidden">
+                                                <img
+                                                    src={img}
+                                                    alt={`${activity.title} ${idx}`}
+                                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                                />
+                                                {idx === 0 && <div className="absolute inset-y-0 right-0 w-[2px] bg-white/30 z-10" />}
+                                            </div>
+                                        ))
+                                    ) : (
+                                        <img
+                                            src={activity.image}
+                                            alt={activity.title}
+                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        />
+                                    )}
+                                    <div className="absolute top-4 left-4 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full z-20">
                                         <span className="text-xs font-semibold text-white">
                                             {activity.category}
                                         </span>

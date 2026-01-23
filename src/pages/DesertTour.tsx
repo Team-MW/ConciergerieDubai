@@ -5,7 +5,14 @@ import { Car } from 'lucide-react';
 import desertBg from '../assets/bacgroundsection.jpg';
 import ktmImg from '../assets/KTM.jpg';
 import quadImg from '../assets/QUAD.jpg';
-import buggyImg from '../assets/buggy.jpg';
+import polaris570Img from '../assets/Gemini_Generated_Image_2x1nzf2x1nzf2x1n.png';
+import polaris1000Img from '../assets/Polaris-775259.webp';
+import canAmX3Img from '../assets/Product_kls-min-1.webp';
+import maverickRImg from '../assets/CAN-AMMAVERICKX3MAXXRSTURBO1000CC4SEATS_964x642_e55ad58c-b3ad-46f7-ab45-70a3c0e3ab9f-104629_384x.avif';
+import duneBashingImg from '../assets/dune-bashing-21-e1566128939590.jpg';
+import camelImg from '../assets/dromadaire_2.jpg';
+import dinnerImg from '../assets/bxvwkiuyr9xtptinupfx.jpg';
+import transferImg from '../assets/44.jpg';
 import FAQ from '../components/FAQ';
 
 const desertFaqs = [
@@ -43,7 +50,7 @@ const DesertTour = () => {
             title: "Polaris 570cc",
             desc: "Quad polyvalent et maniable",
             category: "Quad & Moto",
-            image: quadImg,
+            image: polaris570Img,
             options: [
                 { duration: "1 heure", oldPrice: "600 AED", price: "450 AED", discount: "-25%" }
             ],
@@ -63,7 +70,7 @@ const DesertTour = () => {
             title: "Polaris 1000cc",
             desc: "Buggy 2 places confortable",
             category: "Buggy",
-            image: buggyImg,
+            image: polaris1000Img,
             options: [
                 { duration: "1 heure", oldPrice: "1100 AED", price: "850 AED", discount: "-23%" }
             ],
@@ -73,7 +80,7 @@ const DesertTour = () => {
             title: "Can-Am X3 1000cc (2 places)",
             desc: "Buggy sportif haute performance",
             category: "Buggy",
-            image: buggyImg,
+            image: canAmX3Img,
             options: [
                 { duration: "1 heure", oldPrice: "1600 AED", price: "1300 AED", discount: "-19%" }
             ],
@@ -83,7 +90,7 @@ const DesertTour = () => {
             title: "Can-Am X3 1000cc (4 places)",
             desc: "Buggy familial spacieux",
             category: "Buggy",
-            image: buggyImg,
+            image: canAmX3Img,
             options: [
                 { duration: "1 heure", oldPrice: "1750 AED", price: "1400 AED", discount: "-20%" }
             ],
@@ -93,7 +100,7 @@ const DesertTour = () => {
             title: "Can-Am Maverick R 2024",
             desc: "Le dernier né de Can-Am",
             category: "Buggy",
-            image: buggyImg,
+            image: maverickRImg,
             options: [
                 { duration: "1 heure", oldPrice: "3000 AED", price: "2500 AED", discount: "-17%" }
             ],
@@ -104,6 +111,7 @@ const DesertTour = () => {
             title: "Dunes Bashing",
             desc: "Balade dans les dunes en 4x4",
             category: "Expériences",
+            image: duneBashingImg,
             options: [
                 { duration: "20 min", oldPrice: "250 AED", price: "200 AED", discount: "-20%" }
             ],
@@ -113,6 +121,7 @@ const DesertTour = () => {
             title: "Balade en Chameau",
             desc: "Expérience traditionnelle du désert",
             category: "Expériences",
+            image: camelImg,
             options: [
                 { duration: "20 min", oldPrice: "200 AED", price: "150 AED", discount: "-25%" }
             ],
@@ -122,6 +131,7 @@ const DesertTour = () => {
             title: "Dîner au Camp",
             desc: "Repas traditionnel sous les étoiles",
             category: "Expériences",
+            image: dinnerImg,
             options: [
                 { duration: "Par personne", oldPrice: "350 AED", price: "250 AED", discount: "-29%" }
             ],
@@ -131,6 +141,7 @@ const DesertTour = () => {
             title: "Transfert Hôtel-Désert",
             desc: "Aller-retour confortable",
             category: "Expériences",
+            image: transferImg,
             options: [
                 { duration: "Par voiture", oldPrice: "500 AED", price: "400 AED", discount: "-20%" }
             ],
@@ -187,17 +198,44 @@ const DesertTour = () => {
 
             {/* Activities Grid */}
             <section className="py-20 bg-gray-50 relative overflow-hidden">
-                <div className="absolute top-20 -left-20 opacity-[0.12] pointer-events-none select-none z-0 rotate-90 hidden lg:block">
+                {/* Massive Arabic Background Pattern */}
+                <div className="absolute top-20 -left-20 opacity-[0.08] pointer-events-none select-none z-0 rotate-90 hidden lg:block">
                     <span className="font-arabic text-[22rem] leading-none text-primary whitespace-nowrap">مغامرة</span>
                 </div>
-
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none select-none z-0 rotate-45 hidden lg:block">
                     <span className="font-arabic text-[30rem] leading-none text-primary whitespace-nowrap">كثبان</span>
                 </div>
-
                 <div className="absolute bottom-40 -right-20 opacity-[0.08] pointer-events-none select-none z-0 -rotate-12 hidden lg:block">
                     <span className="font-arabic text-[18rem] leading-none text-primary whitespace-nowrap">رمال</span>
                 </div>
+                <div className="absolute top-1/4 right-1/2 opacity-[0.02] pointer-events-none select-none z-0 rotate-45 hidden lg:block">
+                    <span className="font-arabic text-[12rem] leading-none text-primary whitespace-nowrap">شمس</span>
+                </div>
+                <div className="absolute bottom-1/4 left-1/4 opacity-[0.03] pointer-events-none select-none z-0 -rotate-12 hidden lg:block">
+                    <span className="font-arabic text-[15rem] leading-none text-primary whitespace-nowrap">ساحر</span>
+                </div>
+                <div className="absolute top-10 right-1/4 opacity-[0.05] pointer-events-none select-none z-0 rotate-12 hidden lg:block">
+                    <span className="font-arabic text-[10rem] leading-none text-primary whitespace-nowrap">فرح</span>
+                </div>
+                <div className="absolute top-[10%] left-[20%] opacity-[0.02] pointer-events-none select-none z-0 -rotate-[25deg] hidden lg:block">
+                    <span className="font-arabic text-[14rem] leading-none text-primary whitespace-nowrap">نجمة</span>
+                </div>
+                <div className="absolute bottom-[30%] right-[15%] opacity-[0.03] pointer-events-none select-none z-0 rotate-[10deg] hidden lg:block">
+                    <span className="font-arabic text-[16rem] leading-none text-primary whitespace-nowrap">قمر</span>
+                </div>
+                <div className="absolute top-[60%] left-[5%] opacity-[0.02] pointer-events-none select-none z-0 rotate-[75deg] hidden lg:block">
+                    <span className="font-arabic text-[13rem] leading-none text-primary whitespace-nowrap">نار</span>
+                </div>
+                <div className="absolute bottom-[5%] right-[40%] opacity-[0.02] pointer-events-none select-none z-0 -rotate-[15deg] hidden lg:block">
+                    <span className="font-arabic text-[11rem] leading-none text-primary whitespace-nowrap">صمت</span>
+                </div>
+                <div className="absolute top-[35%] left-[45%] opacity-[0.01] pointer-events-none select-none z-0 rotate-0 hidden lg:block">
+                    <span className="font-arabic text-[25rem] leading-none text-primary whitespace-nowrap">شاسع</span>
+                </div>
+                <div className="absolute bottom-[60%] right-[5%] opacity-[0.02] pointer-events-none select-none z-0 -rotate-90 hidden lg:block">
+                    <span className="font-arabic text-[17rem] leading-none text-primary whitespace-nowrap">اصيل</span>
+                </div>
+
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {activities.map((activity, i) => (
