@@ -73,9 +73,9 @@ const ActivitesAquatiques = () => {
     return (
         <>
             <SEO
-                title="Activités Aquatiques Dubaï | Jet Ski, Jet Car & Flyboard"
-                description="Vivez des sensations fortes sur les eaux du Golfe Persique. Jet Ski à Dubai Marina, Jet Car, Flyboard et plongée sous-marine. Profitez de nos offres à -30% !"
-                keywords="jet ski dubaï, jet car dubaï, flyboard dubaï, plongée dubaï, activités nautiques dubaï, loisirs aquatiques dubaï"
+                title="Activités Nautiques Dubaï | Jet Ski, Jet Car & Flyboard"
+                description="Vivez l'adrénaline sur l'eau à Dubaï. Location de Jet Ski, Jet Car (voiture amphibie), Flyboard et plongée. Réservez vos activités nautiques à Dubai Marina au meilleur prix."
+                keywords="jet ski dubaï, jet car dubaï, flyboard dubaï, plongée dubaï, activités nautiques dubaï, loisirs aquatiques dubaï, location jet ski dubai marina, jet ski tour burj al arab"
             />
 
             {/* Hero Section */}

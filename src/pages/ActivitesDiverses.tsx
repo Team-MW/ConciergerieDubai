@@ -165,9 +165,9 @@ const ActivitesDiverses = () => {
     return (
         <>
             <SEO
-                title="Activités & Excursions Dubaï | Ski Dubai, Burj Khalifa & Attractions"
-                description="Découvrez les meilleures attractions de Dubaï : Ski Dubai au Mall of the Emirates, Burj Khalifa, IMG World, Ferrari World et bien plus. Réservez vos billets coupe-file."
-                keywords="ski dubaï, burj khalifa billets, ferrari world dubaï, img world dubaï, attractions dubaï, excursions dubaï, activités famille dubaï"
+                title="Activités & Attractions Dubaï | Burj Khalifa, Ski Dubai & Musées"
+                description="Réservez vos billets pour les meilleures attractions de Dubaï : Burj Khalifa, Musée du Futur, Ferrari World et Ski Dubai. Billets coupe-file et packs exclusifs pour toute la famille."
+                keywords="ski dubaï, burj khalifa billets, ferrari world dubaï, img world dubaï, attractions dubaï, excursions dubaï, activités famille dubaï, musée du futur dubai, louvre abu dhabi, tickets attractions dubai"
             />
 
             {/* Hero Section */}
@@ -228,8 +228,7 @@ const ActivitesDiverses = () => {
                             <motion.div
                                 key={i}
                                 initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
+                                animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.05 }}
                                 className={`rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group relative ${activity.highlight
                                     ? 'bg-gradient-to-br from-primary to-black text-white'

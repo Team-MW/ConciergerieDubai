@@ -141,9 +141,9 @@ const DesertTour = () => {
     return (
         <>
             <SEO
-                title="Desert Tour Dubaï | Quad, Buggy & Safari dans le Désert"
-                description="Réservez votre aventure dans le désert de Dubaï. Quad Yamaha, Buggy Can-Am Maverick 2024, Dunes Bashing et dîner traditionnel. Vivez une expérience inoubliable !"
-                keywords="safari désert dubaï, buggy dubaï, quad dubaï, dunes bashing, can-am maverick dubaï, excursion désert dubaï"
+                title="Safari Désert Dubaï | Quad, Buggy Can-Am & Expériences Nomades"
+                description="Réservez votre safari dans le désert à Dubaï. Location de Buggy Can-Am Maverick 2024, Quad Yamaha Raptor 700cc, Dunes Bashing en 4x4 et dîners traditionnels sous les étoiles. Meilleur prix garanti."
+                keywords="safari désert dubaï, buggy dubaï, quad dubaï, dunes bashing, can-am maverick dubaï, excursion désert dubaï, quad yamaha raptor dubai, desert safari dubai francophone"
             />
 
             {/* Hero Section */}

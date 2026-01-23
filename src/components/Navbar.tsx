@@ -3,6 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import logo from '../assets/logo.png';
+
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
@@ -38,7 +40,6 @@ const Navbar = () => {
         { name: 'Activités Aquatiques', path: '/activites-aquatiques' },
         { name: 'Desert Tour', path: '/desert-tour' },
         { name: 'Activités Diverses', path: '/activites-diverses' },
-        { name: 'Contact', path: '/contact' },
     ];
 
     return (
@@ -46,12 +47,9 @@ const Navbar = () => {
             <div className="container mx-auto px-4 flex justify-between items-center">
                 <Link
                     to="/"
-                    className="flex items-center gap-3 group"
+                    className="flex items-center group"
                 >
-                    <span className={`text-2xl font-bold tracking-tighter transition-colors ${!scrolled && !isOpen ? 'text-white' : 'text-primary'}`}>
-                        DUBAI<span className="text-accent">SERVICES</span>
-                    </span>
-                    <span className={`font-arabic text-2xl transition-colors ${!scrolled && !isOpen ? 'text-accent/60' : 'text-accent'}`}>دبي</span>
+                    <img src={logo} alt="Dubai Services Logo" className="h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
                 </Link>
 
                 {/* Desktop Menu */}

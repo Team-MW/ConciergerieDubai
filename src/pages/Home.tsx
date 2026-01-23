@@ -53,9 +53,9 @@ const Home = () => {
     return (
         <>
             <SEO
-                title="Conciergerie de Luxe à Dubaï | Activités & Expériences Exclusives"
-                description="Profitez du meilleur de Dubaï avec notre conciergerie haut de gamme. Desert Tour, Jet Ski, Buggy, Ski Dubai et bien plus. Réservez vos activités au meilleur prix !"
-                keywords="conciergerie dubaï, activités dubaï, luxe dubaï, desert tour dubaï, jet ski dubaï, réservation activités dubaï, dubaï services"
+                title="Conciergerie Dubaï | Activités, Loisirs & Expériences de Luxe"
+                description="Vivez le meilleur de Dubaï avec notre conciergerie de luxe. Safari désert, Jet Ski à la Marina, Buggy, Yacht privé et sorties exclusives. Réservez vos souvenirs au meilleur prix avec un service francophone 24h/7."
+                keywords="conciergerie dubaï, activités dubaï, luxe dubaï, desert tour dubaï, jet ski dubaï marina, réservation activités dubaï, dubaï services, safari desert dubai, buggy dubai, yacht dubai, guide francophone dubai"
             />
             {/* Hero Section */}
             <section className="relative h-screen flex items-center justify-center overflow-hidden">
