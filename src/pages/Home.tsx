@@ -1,6 +1,6 @@
 import { motion, type Variants } from 'framer-motion';
 import { Star, Shield, Clock } from 'lucide-react';
-import heroImage from '../assets/hero.jpg';
+import heroImage from '../assets/bacgroundacceuik.jpg';
 import ktmImage from '../assets/KTM.jpg';
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
@@ -70,13 +70,33 @@ const Home = () => {
                     <div className="absolute inset-0 bg-black/40" />
                 </div>
 
-                <div className="container mx-auto px-4 z-10 text-center text-white">
+                <div className="container mx-auto px-4 z-10 text-center text-white relative">
+                    <motion.div
+                        className="absolute -top-20 left-1/2 -translate-x-1/2 w-full flex justify-center opacity-10 pointer-events-none select-none z-0"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 0.1, scale: 1 }}
+                        transition={{ duration: 2 }}
+                    >
+                        <span className="font-arabic text-[12rem] md:text-[20rem] leading-none text-white whitespace-nowrap">دبي</span>
+                    </motion.div>
+
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1 }}
                     >
-                        <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">Vivez Dubaï <br /><span className="text-accent italic">Sans Limites</span></h1>
+                        <h1 className="text-6xl md:text-8xl font-black mb-4 tracking-tighter leading-tight">
+                            Vivez Dubaï <br />
+                            <span className="text-accent italic">Sans Limites</span>
+                        </h1>
+                        <motion.div
+                            className="font-arabic text-3xl md:text-5xl text-accent mb-10"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.5, duration: 1 }}
+                        >
+                            عش دبي بلا حدود
+                        </motion.div>
                         <p className="text-xl md:text-2xl mb-10 max-w-2xl mx-auto font-light">Votre conciergerie haut de gamme pour des expériences inoubliables et un service sur mesure.</p>
                         <Link to="/services" className="bg-white text-primary px-10 py-4 rounded-full text-lg font-semibold hover:bg-accent transition-all transform hover:scale-105 inline-block shadow-xl">
                             Découvrir nos services
@@ -123,8 +143,12 @@ const Home = () => {
                 </div>
 
                 <div className="container mx-auto px-4 relative z-10">
+                    <div className="absolute top-0 right-0 opacity-5 pointer-events-none select-none z-0 hidden lg:block">
+                        <span className="font-arabic text-[15rem] leading-none text-white whitespace-nowrap -mr-20">صحراء</span>
+                    </div>
+
                     <motion.div
-                        className="max-w-2xl"
+                        className="max-w-2xl relative z-10"
                         variants={sectionVariants}
                         initial="hidden"
                         whileInView="visible"

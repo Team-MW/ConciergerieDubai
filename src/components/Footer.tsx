@@ -9,7 +9,10 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                     {/* Brand */}
                     <div className="space-y-4">
-                        <h3 className="text-2xl font-bold tracking-tighter">DUBAI<span className="text-accent">SERVICES</span></h3>
+                        <div className="flex items-center gap-3">
+                            <h3 className="text-2xl font-bold tracking-tighter">DUBAI<span className="text-accent">SERVICES</span></h3>
+                            <span className="font-arabic text-2xl text-accent/50">دبي</span>
+                        </div>
                         <p className="text-gray-400 text-sm leading-relaxed">
                             Votre partenaire de confiance pour une expérience inoubliable à Dubaï. Location de buggy, conciergerie de luxe et plus encore.
                         </p>

@@ -147,7 +147,7 @@ const DesertTour = () => {
             />
 
             {/* Hero Section */}
-            <section className="relative h-[60vh] overflow-hidden">
+            <section className="relative h-[60vh] overflow-hidden flex items-center justify-center">
                 <div
                     className="absolute inset-0 z-0"
                     style={{
@@ -158,6 +158,11 @@ const DesertTour = () => {
                 >
                     <div className="absolute inset-0 bg-black/40" />
                 </div>
+
+                <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none select-none z-0">
+                    <span className="font-arabic text-[15rem] md:text-[25rem] leading-none text-white whitespace-nowrap">دبي</span>
+                </div>
+
                 <div className="relative z-10 h-full flex flex-col items-center justify-center text-white px-4">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -173,7 +178,10 @@ const DesertTour = () => {
             </section>
 
             {/* Activities Grid */}
-            <section className="py-20 bg-gray-50">
+            <section className="py-20 bg-gray-50 relative overflow-hidden">
+                <div className="absolute top-40 -left-20 opacity-[0.03] pointer-events-none select-none z-0 rotate-90 hidden lg:block">
+                    <span className="font-arabic text-[20rem] leading-none text-primary whitespace-nowrap">مغامرة</span>
+                </div>
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {activities.map((activity, i) => (

@@ -14,6 +14,8 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+        arabic: ['Amiri', 'serif'],
+        kufi: ['Reem Kufi', 'sans-serif'],
       },
     },
   },

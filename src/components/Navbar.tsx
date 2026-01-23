@@ -46,9 +46,12 @@ const Navbar = () => {
             <div className="container mx-auto px-4 flex justify-between items-center">
                 <Link
                     to="/"
-                    className={`text-2xl font-bold tracking-tighter transition-colors ${!scrolled && !isOpen ? 'text-white' : 'text-primary'}`}
+                    className="flex items-center gap-3 group"
                 >
-                    DUBAI<span className="text-accent">SERVICES</span>
+                    <span className={`text-2xl font-bold tracking-tighter transition-colors ${!scrolled && !isOpen ? 'text-white' : 'text-primary'}`}>
+                        DUBAI<span className="text-accent">SERVICES</span>
+                    </span>
+                    <span className={`font-arabic text-2xl transition-colors ${!scrolled && !isOpen ? 'text-accent/60' : 'text-accent'}`}>دبي</span>
                 </Link>
 
                 {/* Desktop Menu */}
