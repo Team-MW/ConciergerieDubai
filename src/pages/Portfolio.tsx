@@ -15,13 +15,23 @@ const Portfolio = () => {
             <SEO title="Portfolio" description="Galerie photo de nos aventures et événements à Dubaï." />
             <div className="pt-32 pb-20 bg-primary min-h-screen text-white">
                 <div className="container mx-auto px-4">
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="text-5xl font-bold text-center mb-16"
-                    >
-                        Galerie <span className="text-accent">Moments</span>
-                    </motion.h1>
+                    <div className="text-center mb-16">
+                        <motion.h1
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="text-5xl font-bold mb-4"
+                        >
+                            Galerie <span className="text-accent">Moments</span>
+                        </motion.h1>
+                        <motion.div
+                            className="font-arabic text-3xl text-accent"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.5, duration: 1 }}
+                        >
+                            معرض الصور
+                        </motion.div>
+                    </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {items.map((item, i) => (

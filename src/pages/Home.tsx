@@ -106,13 +106,20 @@ const Home = () => {
             </section>
 
             {/* Quick Services */}
-            <section className="py-20 bg-white">
-                <div className="container mx-auto px-4">
+            <section className="py-20 bg-white relative overflow-hidden">
+                <div className="absolute top-1/2 left-0 -translate-y-1/2 opacity-[0.08] pointer-events-none select-none z-0 -ml-20">
+                    <span className="font-arabic text-[18rem] leading-none text-primary whitespace-nowrap rotate-12">سياحة</span>
+                </div>
+
+                <div className="container mx-auto px-4 relative z-10">
+                    <div className="absolute top-0 left-0 opacity-[0.05] pointer-events-none select-none z-0 -ml-10">
+                        <span className="font-arabic text-[12rem] leading-none text-primary whitespace-nowrap -rotate-90">كرم</span>
+                    </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                         {services.map((service, idx) => (
                             <motion.div
                                 key={idx}
-                                className="p-8 rounded-3xl bg-gray-50 hover:shadow-xl transition-shadow border border-gray-100"
+                                className="p-8 rounded-3xl bg-gray-50 hover:shadow-xl transition-shadow border border-gray-100 backdrop-blur-sm bg-white/50"
                                 initial="hidden"
                                 whileInView="visible"
                                 viewport={{ once: true }}
@@ -143,8 +150,11 @@ const Home = () => {
                 </div>
 
                 <div className="container mx-auto px-4 relative z-10">
-                    <div className="absolute top-0 right-0 opacity-5 pointer-events-none select-none z-0 hidden lg:block">
+                    <div className="absolute top-0 right-0 opacity-20 pointer-events-none select-none z-0 hidden lg:block">
                         <span className="font-arabic text-[15rem] leading-none text-white whitespace-nowrap -mr-20">صحراء</span>
+                    </div>
+                    <div className="absolute bottom-0 left-0 opacity-10 pointer-events-none select-none z-0 hidden lg:block">
+                        <span className="font-arabic text-[12rem] leading-none text-white whitespace-nowrap rotate-45">سرعة</span>
                     </div>
 
                     <motion.div
@@ -185,8 +195,14 @@ const Home = () => {
             <FAQ items={homeFaqs} />
 
             {/* CTA Section */}
-            <section className="py-20 bg-gray-50">
-                <div className="container mx-auto px-4 text-center">
+            <section className="py-20 bg-gray-50 relative overflow-hidden">
+                <div className="absolute bottom-0 right-0 opacity-[0.08] pointer-events-none select-none z-0 translate-y-1/4">
+                    <span className="font-arabic text-[20rem] leading-none text-primary whitespace-nowrap">فخامة</span>
+                </div>
+                <div className="absolute top-0 left-0 opacity-[0.05] pointer-events-none select-none z-0">
+                    <span className="font-arabic text-[15rem] leading-none text-primary whitespace-nowrap -rotate-12">أناقة</span>
+                </div>
+                <div className="container mx-auto px-4 text-center relative z-10">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"

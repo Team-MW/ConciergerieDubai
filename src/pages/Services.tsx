@@ -27,7 +27,15 @@ const Services = () => {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-center mb-16"
                     >
-                        <h1 className="text-4xl md:text-5xl font-light mb-6 text-primary">Prestations <span className="font-bold">Exclusives</span></h1>
+                        <h1 className="text-4xl md:text-5xl font-light mb-4 text-primary">Prestations <span className="font-bold">Exclusives</span></h1>
+                        <motion.div
+                            className="font-arabic text-3xl text-accent mb-6"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.5, duration: 1 }}
+                        >
+                            خدمات حصرية
+                        </motion.div>
                         <p className="text-gray-500 max-w-2xl mx-auto font-light">
                             Une sélection d'expériences uniques pour un séjour inoubliable.
                         </p>

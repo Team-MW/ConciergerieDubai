@@ -18,7 +18,15 @@ const Contact = () => {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-center mb-16"
                     >
-                        <h1 className="text-5xl font-bold mb-6">Contactez-nous</h1>
+                        <h1 className="text-5xl font-bold mb-4">Contactez-nous</h1>
+                        <motion.div
+                            className="font-arabic text-3xl text-accent mb-6"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.5, duration: 1 }}
+                        >
+                            اتصل بنا
+                        </motion.div>
                         <p className="text-gray-600">Notre équipe est à votre disposition 24/7 pour répondre à vos demandes.</p>
                     </motion.div>
 

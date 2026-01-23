@@ -170,6 +170,14 @@ const DesertTour = () => {
                         className="text-center"
                     >
                         <h1 className="text-5xl md:text-6xl font-bold mb-4">Desert Tour</h1>
+                        <motion.div
+                            className="font-arabic text-3xl md:text-4xl text-accent mb-4"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.5, duration: 1 }}
+                        >
+                            جولة في الصحراء
+                        </motion.div>
                         <p className="text-xl md:text-2xl font-light max-w-2xl mx-auto">
                             L'aventure commence dans les dunes dorées
                         </p>
@@ -179,8 +187,16 @@ const DesertTour = () => {
 
             {/* Activities Grid */}
             <section className="py-20 bg-gray-50 relative overflow-hidden">
-                <div className="absolute top-40 -left-20 opacity-[0.03] pointer-events-none select-none z-0 rotate-90 hidden lg:block">
-                    <span className="font-arabic text-[20rem] leading-none text-primary whitespace-nowrap">مغامرة</span>
+                <div className="absolute top-20 -left-20 opacity-[0.12] pointer-events-none select-none z-0 rotate-90 hidden lg:block">
+                    <span className="font-arabic text-[22rem] leading-none text-primary whitespace-nowrap">مغامرة</span>
+                </div>
+
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none select-none z-0 rotate-45 hidden lg:block">
+                    <span className="font-arabic text-[30rem] leading-none text-primary whitespace-nowrap">كثبان</span>
+                </div>
+
+                <div className="absolute bottom-40 -right-20 opacity-[0.08] pointer-events-none select-none z-0 -rotate-12 hidden lg:block">
+                    <span className="font-arabic text-[18rem] leading-none text-primary whitespace-nowrap">رمال</span>
                 </div>
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
